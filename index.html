@@ -18,11 +18,29 @@
         </div>
     </header>
     <main>
+                <!-- loader -->
+        <section id="loader" class="text-center d-none">
+            <button class="btn btn-primary" type="button" disabled>
+  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  <span class="visually-hidden">Loading...</span>
+</button>
+<button class="btn btn-primary" type="button" disabled>
+  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  Loading...
+</button>
+        </section>
         <section class="mt-4 container">
             <div id="card-container" class="row row-cols-1 row-cols-md-3 g-4">
  
 </div>
+
         </section>
+        <section >
+            <div class="text-center mt-3 d-none">
+            <button id="btnshow" class="btn btn-outline-danger ">Show More</button>
+            </div>
+        </section>
+
     </main>
 
     <script src="card.js"></script>
