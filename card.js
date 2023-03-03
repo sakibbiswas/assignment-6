@@ -95,10 +95,10 @@ const displayloadDetails = details => {
       <div class="card-body">
         <h6  class="card-title">${details.description} </h6>
         <div class="row   gap-1 mx-auto ">
-          <button class=" col btn text-center px-2 py-2 fw-semibold text-success bg-white">${details.pricing
+          <button class=" col btn text-center px-2 py-4 fw-semibold text-success bg-white">${details.pricing
 [0].plan}</button>
-          <button class="col btn text-center fw-semibold text-info px-2 py-2  bg-white">${details.pricing[1].price}</button>
-          <button class=" col btn text-center fw-semibold text-danger px-2 py-2  bg-white">${details.pricing[2].price}</button>
+          <button class="col btn text-center fw-semibold text-info px-2 py-4  bg-white">${details.pricing[1].price}</button>
+          <button class=" col btn text-center fw-semibold text-danger px-2 py-4  bg-white">${details.pricing[2].price}</button>
         </div>
         <div class="d-flex gap-4">
      <h6 class="card-title">features</h6>
@@ -135,7 +135,9 @@ const displayloadDetails = details => {
 
       <div class="card-body">
         <h5  class="card-title">${details.input_output_examples[0].input}</h5>
-        <p class="card-text">${details.accuracy.description}</p>
+        <p class="card-text">${details.input_output_examples[1].input
+
+}</p>
       </div>
     </div>
   </div>
