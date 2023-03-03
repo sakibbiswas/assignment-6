@@ -43,8 +43,7 @@ const displaycards = (cards,datalimit) => {
         </p>
       </div>
     </div>
-        
-        
+
         `;
     containercard.appendChild(cardiv)
     
@@ -92,23 +91,44 @@ const displayloadDetails = details => {
   detailBody.innerHTML = `
      <div class="row row-cols-1 row-cols-md-2 g-4">
   <div class="col ">
-    <div class="card  h-100 bg-info">
+    <div class="card  h-100 bg-info rounded-2">
       <div class="card-body">
-        <h5  class="card-title">${details.description} </h5>
-        <div class="d-flex gap-2">
+        <h6  class="card-title">${details.description} </h6>
+        <div class="d-flex gap-4">
+     <h6 class="card-title">features</h6>
+     <h6 class="card-title">Integrations</h6>
+     </div>
+     <div class=" d-flex gap-2">
+    <div class="h-25">
+     <li> ${details.features[1].feature_name}</li>
+     <li>${details.features[2].feature_name}</li>
+     <li>${details.features[3].feature_name}</li>
+     </div>
 
-     <h5 class="card-title">features</h5>
-     <h5 class="card-title">Integrations</h5>
+     <div>
+     <p>${details.integrations[0]}</p>
+     <p>${details.integrations[1]}</p>
+     <p>${details.integrations[3]}</p>
+     <p>${details.integrations[4]}</p>
+     
+     </div>
+    
      </div>
        </div>
        </div>
-       </div>
+    </div>
 
     <div class="col">
-    <div class="card h-100 bg-gradient">
-      <img  src="${details.image}" class="card-img-top" alt="...">
+    <div class="card h-100 bg-info rounded-2">
+    <div class="position-absolute d-flex justify-content-end mt-2 ms-5 ps-5">
+       <button class="btn btn-danger px-5 py-2 ms-5">${details.accuracy.score
+}%accuracy</button>
+</div>
+      <img  src="${details.image_link
+  [0]}" class="card-img-top img-fluid" alt="...">
+
       <div class="card-body">
-        <h5  class="card-title"></h5>
+        <h5  class="card-title">${details.input_output_examples[0].input}</h5>
         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
       </div>
     </div>
