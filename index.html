@@ -20,14 +20,9 @@
     <main>
                 <!-- loader -->
         <section id="loader" class="text-center d-none">
-            <button class="btn btn-primary" type="button" disabled>
-  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+<div class="spinner-border m-5" role="status">
   <span class="visually-hidden">Loading...</span>
-</button>
-<button class="btn btn-primary" type="button" disabled>
-  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-  Loading...
-</button>
+</div>
         </section>
         <section class="mt-4 container">
             <div id="card-container" class="row row-cols-1 row-cols-md-3 g-4">
@@ -35,8 +30,9 @@
 </div>
 
         </section>
+        <!-- show more -->
         <section >
-            <div class="text-center mt-3 d-none">
+            <div id="showall" class="text-center mt-3 d-none">
             <button id="btnshow" class="btn btn-outline-danger ">Show More</button>
             </div>
         </section>
