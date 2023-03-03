@@ -24,7 +24,7 @@ const displaycards = (cards,datalimit) => {
         const cardiv = document.createElement('div')
         cardiv.classList.add('col')
     cardiv.innerHTML = `
-    <div class="card rounded-3" style="hight:100px">
+    <div class="card rounded-3  h-100" >
       <img src="${card.image}" class="card-img-top p-4 rounded-5" alt="...">
       <div class="card-body">
     
@@ -38,7 +38,9 @@ const displaycards = (cards,datalimit) => {
     <h5 class="card-title px-3">${card.name}</h5>
     
         <p class="card-text p-3"><i class="fa-regular fa-calendar-days"></i> ${card.published_in}</p>
-        <p onclick="" class="text-center"><i class="fa-sharp fa-solid fa-arrow-right"></i></p>
+        <p onclick="LoaddetailsData('${card.id}')" class="text-center"data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-sharp fa-solid fa-arrow-right"></i>
+        
+        </p>
       </div>
     </div>
         
@@ -64,7 +66,7 @@ const toggolloader = (isloading) => {
  
   
 }
-
+// show more btn handlar
 document.getElementById('btnshow').addEventListener('click', function () {
   processsearch()
 })
@@ -73,6 +75,57 @@ const processsearch = (datalimit) => {
   
 }
 // loadcards()
+
+// DetailsData start
+
+const LoaddetailsData =async (id) => {
+  const url = `https://openapi.programming-hero.com/api/ai/tool/${id}`
+  const res = await fetch(url)
+  const data = await res.json()
+// console.log(data.data)
+  displayloadDetails(data.data)
+  
+}
+const displayloadDetails = details => {
+  // console.log(details)
+  const detailBody = document.getElementById('detail-body')
+  detailBody.innerHTML = `
+     <div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="col ">
+    <div class="card  h-100 bg-info">
+      <div class="card-body">
+        <h5  class="card-title">${details.description} </h5>
+        <div class="d-flex gap-2">
+
+     <h5 class="card-title">features</h5>
+     <h5 class="card-title">Integrations</h5>
+     </div>
+       </div>
+       </div>
+       </div>
+
+    <div class="col">
+    <div class="card h-100 bg-gradient">
+      <img  src="${details.image}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5  class="card-title"></h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+
+       </div>
+  
+  `
+
+}
+
+
+
+
+
+// LoaddetailsData()
+
 toggolloader(true)
  processsearch(6)
  
