@@ -94,6 +94,12 @@ const displayloadDetails = details => {
     <div class="card  h-100 bg-info rounded-2">
       <div class="card-body">
         <h6  class="card-title">${details.description} </h6>
+        <div class="row row-cols-1  gap-1 mx-auto ">
+          <button class=" col btn text-center px-2 py-2   bg-white">${details.pricing
+[0].plan}</button>
+          <button class="col btn text-center px-2 py-2  bg-white">${details.pricing[1].price}</button>
+          <button class=" col btn text-center px-2 py-2  bg-white">${details.pricing[2].price}</button>
+        </div>
         <div class="d-flex gap-4">
      <h6 class="card-title">features</h6>
      <h6 class="card-title">Integrations</h6>
@@ -106,10 +112,10 @@ const displayloadDetails = details => {
      </div>
 
      <div>
-     <p>${details.integrations[0]}</p>
-     <p>${details.integrations[1]}</p>
-     <p>${details.integrations[3]}</p>
-     <p>${details.integrations[4]}</p>
+     <p>${ details.integrations[0] ? details.integrations[0] : 'No Data Found'}</p>
+     <p>${ details.integrations[1] ? details.integrations[1] : 'No Data Found'}</p>
+     <p>${ details.integrations[2] ? details.integrations[2] : 'No Data Found'}</p>
+     
      
      </div>
     
@@ -129,7 +135,7 @@ const displayloadDetails = details => {
 
       <div class="card-body">
         <h5  class="card-title">${details.input_output_examples[0].input}</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text">${details.accuracy.description}</p>
       </div>
     </div>
   </div>
