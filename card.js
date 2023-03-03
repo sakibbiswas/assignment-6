@@ -94,7 +94,7 @@ const displayloadDetails = details => {
     <div class="card  h-100 bg-info rounded-2">
       <div class="card-body">
         <h6  class="card-title">${details.description} </h6>
-        <div class="row   gap-1 mx-auto ">
+        <div class="row p-2  gap-1  ">
           <button class=" col btn text-center px-2 py-4 fw-semibold text-success bg-white">${details.pricing
 [0].plan}</button>
           <button class="col btn text-center fw-semibold text-info px-2 py-4  bg-white">${details.pricing[1].price}</button>
@@ -131,13 +131,11 @@ const displayloadDetails = details => {
 }%accuracy</button>
 </div>
       <img  src="${details.image_link
-  [0]}" class="card-img-top img-fluid" alt="...">
+  [0]}" class="card-img-top img-fluid p-3 rounded-3" alt="...">
 
       <div class="card-body">
         <h5  class="card-title">${details.input_output_examples[0].input}</h5>
-        <p class="card-text">${details.input_output_examples[1].input
-
-}</p>
+        <p class="card-text">${details.input_output_examples[1].input}</p>
       </div>
     </div>
   </div>
