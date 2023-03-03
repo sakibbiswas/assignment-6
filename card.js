@@ -94,11 +94,11 @@ const displayloadDetails = details => {
     <div class="card  h-100 bg-info rounded-2">
       <div class="card-body">
         <h6  class="card-title">${details.description} </h6>
-        <div class="row row-cols-1  gap-1 mx-auto ">
-          <button class=" col btn text-center px-2 py-2   bg-white">${details.pricing
+        <div class="row   gap-1 mx-auto ">
+          <button class=" col btn text-center px-2 py-2 fw-semibold text-success bg-white">${details.pricing
 [0].plan}</button>
-          <button class="col btn text-center px-2 py-2  bg-white">${details.pricing[1].price}</button>
-          <button class=" col btn text-center px-2 py-2  bg-white">${details.pricing[2].price}</button>
+          <button class="col btn text-center fw-semibold text-info px-2 py-2  bg-white">${details.pricing[1].price}</button>
+          <button class=" col btn text-center fw-semibold text-danger px-2 py-2  bg-white">${details.pricing[2].price}</button>
         </div>
         <div class="d-flex gap-4">
      <h6 class="card-title">features</h6>
