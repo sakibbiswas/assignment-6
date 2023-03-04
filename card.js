@@ -136,7 +136,7 @@ const displayloadDetails = details => {
 
       <div class="card-body">
         <h5  class="card-title">${details.input_output_examples[0].input}</h5>
-        <p class="card-text">${details.input_output_examples[0].input}</p>
+        <p class="card-text">${details.input_output_examples[0].output}</p>
       </div>
     </div>
   </div>
