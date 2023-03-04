@@ -7,21 +7,23 @@ const loadcards = async (datalimit) => {
 }
 const displaycards = (cards,datalimit) => {
   const containercard = document.getElementById('card-container')
+  containercard.innerText = '';
   // btn show
   const showALL = document.getElementById('showall');
      if  (datalimit && cards.length > 6) {
        cards = cards.slice(0,6)
         showALL.classList.remove('d-none')
-        
+         
     }
     else {
         showALL.classList.add('d-none')
   }
 
    
+  
   cards.forEach(card => {
       console.log(card)
-        const cardiv = document.createElement('div')
+    const cardiv = document.createElement('div')
         cardiv.classList.add('col')
     cardiv.innerHTML = `
     <div class="card rounded-3  h-100" >
@@ -48,13 +50,15 @@ const displaycards = (cards,datalimit) => {
         `;
     containercard.appendChild(cardiv)
     
+    
   })
   // loader stop
   toggolloader(false)
-  
-  
+ 
+ 
  
 }
+
 // loader part
 const toggolloader = (isloading) => {
     const loadersection = document.getElementById('loader')
@@ -65,7 +69,7 @@ const toggolloader = (isloading) => {
         loadersection.classList.add('d-none')
   }
  
-  
+   
 }
 // show more btn handlar
 document.getElementById('btnshow').addEventListener('click', function () {
@@ -104,13 +108,13 @@ const displayloadDetails = details => {
         </div>
         <div class="d-flex gap-5">
      <h6 class="card-title">features</h6>
-     <h6 class="card-title">Integrations</h6>
+     <h6 class="card-title ms-5">Integrations</h6>
      </div>
      <div class=" d-flex gap-2">
     <div class="h-25">
-     <li> ${details.features[1].feature_name}</li>
-     <li>${details.features[2].feature_name}</li>
-     <li>${details.features[3].feature_name}</li>
+     <li> ${details.features[1].feature_name ? details.features[1].feature_name:'no data'}</li>
+     <li>${details.features[1].feature_name ? details.features[1].feature_name:'no data' }</li>
+     <li>${details.features[1].feature_name ? details.features[1].feature_name:'no data' }</li>
      </div>
 
      <div>
@@ -144,11 +148,6 @@ const displayloadDetails = details => {
        </div>
 
 
-
-
-
-
-  
   `
 
 }
