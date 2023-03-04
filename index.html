@@ -11,10 +11,11 @@
 <script src="https://kit.fontawesome.com/aeee68b8f5.js" crossorigin="anonymous"></script>
 </head>
 <body>
+  <!-- header start -->
     <header>
         <div class="text-center">
         <h1 class="fw-bold">AI Universe Hub</h1> 
-        <button class="btn btn-secondary fw-semibold">Sort by Date</button>
+        <button  id="sortdate" class="btn btn-secondary fw-semibold">Sort by Date</button>
         </div>
     </header>
     <main>
@@ -24,15 +25,15 @@
   <span class="visually-hidden">Loading...</span>
 </div>
         </section>
+        <!-- card container -->
         <section class="mt-4 container">
             <div id="card-container" class="row row-cols-1 row-cols-md-3 g-4">
  
 </div>
-
         </section>
         <!-- show more -->
-        <section >
-            <div id="showall" class="text-center mt-3 d-none">
+        <section>
+            <div id="showall" class="text-center mt-3 mb-5 d-none">
             <button id="btnshow" class="btn btn-outline-danger ">Show More</button>
             </div>
         </section>
@@ -42,16 +43,13 @@
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content ">
+    <div class="modal-content   " >
       <div class="modal-header justify-content-end  ">
         
         <button type="button" class="btn-close ms-5  bg-dark-subtle rounded-4 " data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div id="detail-body" class="modal-body">
        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

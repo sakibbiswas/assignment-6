@@ -38,6 +38,7 @@ const displaycards = (cards,datalimit) => {
     <h5 class="card-title px-3">${card.name}</h5>
     
         <p class="card-text p-3"><i class="fa-regular fa-calendar-days"></i> ${card.published_in}</p>
+
         <p onclick="LoaddetailsData('${card.id}')" class="text-center"data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-sharp fa-solid fa-arrow-right"></i>
         
         </p>
@@ -48,6 +49,7 @@ const displaycards = (cards,datalimit) => {
     containercard.appendChild(cardiv)
     
   })
+  // loader stop
   toggolloader(false)
   
   
@@ -85,22 +87,22 @@ const LoaddetailsData =async (id) => {
   displayloadDetails(data.data)
   
 }
+// DisplayloadDetails start
 const displayloadDetails = details => {
-  // console.log(details)
+ 
   const detailBody = document.getElementById('detail-body')
   detailBody.innerHTML = `
-     <div class="row row-cols-1 row-cols-md-2 g-4">
-  <div class="col ">
-    <div class="card  h-100 bg-info rounded-2">
+     <div class="row row-cols-1 row-cols-md-2 g-2  " >
+  <div class="col  ">
+    <div class="card h-100  bg-danger-subtle rounded-2">
       <div class="card-body">
-        <h6  class="card-title">${details.description} </h6>
+        <h5  class="card-title">${details.description} </h5>
         <div class="row p-2  gap-1  ">
-          <button class=" col btn text-center px-2 py-4 fw-semibold text-success bg-white">${details.pricing
-[0].plan}</button>
-          <button class="col btn text-center fw-semibold text-info px-2 py-4  bg-white">${details.pricing[1].price}</button>
-          <button class=" col btn text-center fw-semibold text-danger px-2 py-4  bg-white">${details.pricing[2].price}</button>
+<button class=" col btn text-center px-2 py-4 fw-semibold text-success bg-white">${details.pricing[0].price ? details.pricing[0].price:'Free of cost'}</button>
+          <button class="col btn text-center fw-semibold text-info px-2 py-4  bg-white">${details.pricing[1].price ? details.pricing[1].price:'Free of pro'}</button>
+          <button class=" col btn text-center fw-semibold text-danger px-2 py-4  bg-white">${details.pricing[2].plan ? details.pricing[2].plan:'Free of cost/Enterprise'}</button>
         </div>
-        <div class="d-flex gap-4">
+        <div class="d-flex gap-5">
      <h6 class="card-title">features</h6>
      <h6 class="card-title">Integrations</h6>
      </div>
@@ -125,22 +127,27 @@ const displayloadDetails = details => {
     </div>
 
     <div class="col">
-    <div class="card h-100 bg-info rounded-2">
-    <div class="position-absolute d-flex justify-content-end mt-2 ms-5 ps-5">
-       <button class="btn btn-danger px-5 py-2 ms-5">${details.accuracy.score
-}%accuracy</button>
+    <div class="card h-100  rounded-2">
+    <div class="position-absolute d-flex justify-content-end mt-2 " style=" padding-left:70px" >
+       <button id="accuracyshow" class="btn btn-danger ms-2">${details.accuracy.score ? details.accuracy.score :" No"}%accuracy</button>
 </div>
       <img  src="${details.image_link
-  [0]}" class="card-img-top img-fluid p-3 rounded-3" alt="...">
+  [0]}" class="card-img-top img-fluid p-2 rounded-4" alt="...">
 
       <div class="card-body">
         <h5  class="card-title">${details.input_output_examples[0].input}</h5>
-        <p class="card-text">${details.input_output_examples[1].input}</p>
+        <p class="card-text">${details.input_output_examples[0].input}</p>
       </div>
     </div>
   </div>
 
        </div>
+
+
+
+
+
+
   
   `
 
@@ -150,9 +157,13 @@ const displayloadDetails = details => {
 
 
 
-// LoaddetailsData()
 
+
+
+// LoaddetailsData()
+// loader start
 toggolloader(true)
+// Show only 6 card
  processsearch(6)
  
 
