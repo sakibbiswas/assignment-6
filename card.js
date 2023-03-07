@@ -32,9 +32,7 @@ const displaycards = (cards,datalimit) => {
     
     <h5 class="card-title px-3">features</h5>
     <ol>
-    <li>Natural language processing</li>    
-    <li>Contextual understanding </li>    
-    <li>Text generation</li>        
+    ${card.features.map(a=>`<li>${a}</li>`).join('')}     
     </ol>
     <hr class="w-100 border-3 ">
     <h5 class="card-title px-3">${card.name}</h5>
@@ -96,8 +94,8 @@ const displayloadDetails = details => {
  
   const detailBody = document.getElementById('detail-body')
   detailBody.innerHTML = `
-     <div class="row row-cols-1 row-cols-md-2 g-2  " >
-  <div class="col  ">
+     <div class="row  row-cols-sm-1 row-cols-md-2 g-2  " >
+  <div class="col ">
     <div class="card h-100  bg-danger-subtle rounded-2">
       <div class="card-body">
         <h5  class="card-title">${details.description} </h5>
